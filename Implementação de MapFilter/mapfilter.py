@@ -7,11 +7,8 @@ def ffilter(f, l):
         return ffilter(f, l[1:])
 
 def fmap(f, l):
-    final = []
-    for i in l:
-        final.append(f(i))
-    l = final
-    return l
+    for i, j in enumerate(l):
+        l[i] = f(j)
 
 new = [2, 4, 7, 11, 3, 12]
 result_filter = ffilter(lambda x : x % 2 == 1, new)
